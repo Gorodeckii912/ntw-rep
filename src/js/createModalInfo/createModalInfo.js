@@ -77,7 +77,7 @@ function createModalInfo(data) {
 
 
 
-// import './toggleModalCardInfo'
+import './toggleModalCardInfo'
 // function btnAddToLocalStorage() {
 //     const btn = document.querySelector(".btn__add-to-library");
 
