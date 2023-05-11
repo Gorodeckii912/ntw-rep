@@ -1,10 +1,8 @@
 import lightBtnClose from '../../svg/close.svg'
 import darkBtnClose from '../../svg/Vector.svg'
 
-const LightSwitcher = document.querySelector(".switcher");
-let isLight = localStorage.getItem('isLight') || false;
+let isLight = getLocalStorage('isLight') || 'false';
 const colorClass = "light"
-
 
 
 const utils = {
@@ -19,17 +17,21 @@ const utils = {
 }
 
 
+
 if (isLight === 'true') {
     document.body.classList.add('light');
     changeColorElementToLight()
 } else {
-    deleteClassList(utils.popupContent, colorClass)
+    changeColorElementToDark()
+
 }
 
 
-LightSwitcher.addEventListener("click", function() {
-    isLight ? changeColorElementToLight() : changeColorElementToDark()
-})
+
+export function changeModalCardInfo() {
+    getLocalStorage('isLight') == "true" ? changeColorElementToLight() : changeColorElementToDark()
+    
+}
 
 
 function changeColorElementToLight() {
@@ -53,7 +55,7 @@ function changeColorElementToDark() {
     deleteClassList(utils.vote, colorClass);
     deleteClassList(utils.votes, colorClass);
     deleteClassList(utils.addToLocalStoradge, colorClass);
-    [...utils.textLeft].map(item => deleteClassListdeleteClassList(item, colorClass))
+    [...utils.textLeft].map(item => deleteClassList(item, colorClass))
 }
 
 
@@ -70,4 +72,9 @@ function findOneElement(selector) {
 }
 function findElements(selector) {
     return document.querySelectorAll(selector)
+}
+
+
+function getLocalStorage(key) {
+    return localStorage.getItem(key)
 }
