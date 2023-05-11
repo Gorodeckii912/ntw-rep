@@ -28,12 +28,55 @@ let isLight = localStorage.getItem('isLight');
 if (isLight === 'true') {
   document.body.classList.add('light');
   document.querySelector('.mob-menu').classList.add('light');
+  document.querySelector('.header-menu').classList.add('light');
+  const headerLinks = document.querySelectorAll('.header-link');
+  document.querySelector('.name').classList.add('light');
+  headerLinks.forEach((link) => {
+    link.classList.add('light');
+  });
+
+  const footerTexts = document.querySelectorAll('.footer-text');
+  footerTexts.forEach((text) => {
+    text.classList.add('light');
+  });
+
+  const footerTextSpans = document.querySelectorAll('.footer-text-span');
+  footerTextSpans.forEach((span) => {
+    span.classList.add('light');
+  });
+
+  const footerLinks = document.querySelectorAll('.footer-link');
+  footerLinks.forEach((link) => {
+    link.classList.add('light');
+  });
 }
 
 LightSwitcher.onclick = function () {
-  
   document.body.classList.toggle('light');
   document.querySelector('.mob-menu').classList.toggle('light');
+  document.querySelector('.name').classList.toggle('light');
+  document.querySelector('.header-menu').classList.toggle('light');
+  
+  const headerLinks = document.querySelectorAll('.header-link');
+  headerLinks.forEach((link) => {
+    link.classList.toggle('light');
+  });
+
+  const footerTexts = document.querySelectorAll('.footer-text');
+  footerTexts.forEach((text) => {
+    text.classList.toggle('light');
+  });
+
+  const footerTextSpans = document.querySelectorAll('.footer-text-span');
+  footerTextSpans.forEach((span) => {
+    span.classList.toggle('light');
+  });
+
+  const footerLinks = document.querySelectorAll('.footer-link');
+  footerLinks.forEach((link) => {
+    link.classList.toggle('light');
+  });
+
   isLight = document.body.classList.contains('light');
   localStorage.setItem('isLight', isLight);
 };
@@ -75,7 +118,7 @@ overlay.addEventListener('click', () => {
   overlay.style.visibility = 'hidden';
   menuContainer.querySelectorAll('a').forEach(link => link.style.display = 'none');
 });
-import { toggleModalCardInfo } from "./createModalInfo/toggleModalCardInfo";
+
 
 // header nav
 // Получаем элемент хедера
@@ -86,12 +129,10 @@ function toggleHeaderColor() {
   if (document.body.classList.contains('light')) {
     // Если текущая тема светлая, устанавливаем светлый цвет хедера
     headerNav.style.backgroundColor = '#fff';
-    toggleModalCardInfo();
     // Здесь вы можете добавить другие стили или классы по вашему выбору
   } else {
     // Если текущая тема темная, устанавливаем темный цвет хедера
     headerNav.style.backgroundColor = '#111111';
-    toggleModalCardInfo();
     // Здесь вы можете добавить другие стили или классы по вашему выбору
   }
 }
