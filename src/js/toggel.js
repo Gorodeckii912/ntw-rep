@@ -129,12 +129,12 @@ function toggleHeaderColor() {
   if (document.body.classList.contains('light')) {
     // Если текущая тема светлая, устанавливаем светлый цвет хедера
     headerNav.style.backgroundColor = '#fff';
-    // toggleModalCardInfo();
+    toggleModalCardInfo();
     // Здесь вы можете добавить другие стили или классы по вашему выбору
   } else {
     // Если текущая тема темная, устанавливаем темный цвет хедера
     headerNav.style.backgroundColor = '#111111';
-    // toggleModalCardInfo();
+    toggleModalCardInfo();
     // Здесь вы можете добавить другие стили или классы по вашему выбору
   }
 }
